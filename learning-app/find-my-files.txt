@@ -1,0 +1,11 @@
+Dateien der Lernapp (dieser Ordner):
+
+- index.html   <-- diese Datei im Browser öffnen (Doppelklick)
+- README.md
+- data/content.json
+- data/quiz_forcechains.csv
+- data/apps_script_forcechain_example.gs
+
+Wenn du sie nicht siehst, bist du wahrscheinlich im falschen Ordner.
+Der korrekte absolute Pfad lautet:
+/workspace/Deep-Live-Cam/learning-app

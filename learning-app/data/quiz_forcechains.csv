@@ -1,0 +1,13 @@
+question_id;question;option_a;option_b;option_c;option_d;correct_option;explanation;alt_question_id
+Q001;Was prüfst du vor einem Antrag zuerst?;Pressetermin;Zuständigkeit;Social-Media-Text;Fraktionslogo;B;Ohne Zuständigkeitsprüfung ist der Antrag oft unzulässig oder wird nur als Empfehlung behandelt.;Q001a
+Q001a;Welche Frage klärt Zuständigkeit am besten?;"Ist das Thema wichtig?";"Wer ist rechtlich entscheidungsbefugt?";"Wer spricht zuerst?";"Wie lang ist die Redezeit?";B;Entscheidend ist die rechtliche Entscheidungskompetenz.;Q001b
+Q001b;Wenn die BV nicht zuständig ist, was ist häufig sinnvoll?;Antrag zurückziehen ohne Ersatz;Empfehlungsbeschluss oder Verweisung;Nur Pressemitteilung;Thema vertagen ohne Begründung;B;So bleibt das Thema im Verfahren und gelangt in die richtige Ebene.;
+Q002;Wann ist ein Verfahrensantrag besonders wirksam?;Wenn die Debatte ausufert;Nur am Sitzungsende;Nur in nichtöffentlicher Sitzung;Nie;A;Verfahrensanträge steuern Zeit und Struktur der Beratung.;Q002a
+Q002a;Welcher Verfahrensantrag kann eine Entscheidung vorbereiten?;Vertagung ohne Ziel;Schluss der Debatte mit anschließender Abstimmung;Abbruch der Sitzung;Streichung des TOP ohne Beschluss;B;So wird aus Diskussion wieder ein entscheidungsfähiger Prozess.;Q002b
+Q002b;Was brauchst du bei einer Vertagung mindestens?;Beliebigen Grund;Klare Begründung und weiteres Vorgehen;Nur Zustimmung der Presse;Nichts;B;Vertagung muss transparent und zielorientiert sein.;
+Q003;Wie wird ein Bürgeranliegen beschlussfähig?;Mit allgemeiner Kritik;Mit klarem Ort, Ziel und Maßnahme;Mit möglichst langen Reden;Mit anonymen Hinweisen;B;Beschlussfähigkeit entsteht durch Konkretisierung.;
+Q004;Was ist ein guter Aufbau für eine 90-Sekunden-Rede?;Biografie, Zitat, Witz;Problem, Zuständigkeit, Beschlussvorschlag;Fraktionsgeschichte, Dank, Ende;Frage, Frage, Frage;B;Diese Struktur ist klar, knapp und entscheidungsorientiert.;
+Q005;Welche Methode hilft bei der Beschlusskontrolle?;Ampel-Tracking;Spontane Erinnerung;Nur mündliche Nachfragen;Warten auf Presseberichte;A;Transparente Nachverfolgung erhöht Umsetzungsdruck.;
+Q006;Wann sollte ein Prüfauftrag statt Sofortmaßnahme beantragt werden?;Wenn Faktenlage unklar ist;Immer;Nie;Nur vor Wahlen;A;Prüfaufträge sind sinnvoll zur belastbaren Entscheidungsgrundlage.;
+Q007;Was stärkt fraktionsübergreifende Mehrheiten?;Maximalforderungen ohne Dialog;Interessenmatrix und Kompromissformulierung;Nur interne Abstimmung;Vertagung aller Themen;B;Strategische Anschlussfähigkeit erhöht Mehrheitschancen.;
+Q008;Welcher Fehler kostet oft politische Wirkung?;Zu konkrete Ziele;Keine Nachverfolgung nach Beschluss;Kurze Reden;Saubere Anträge;B;Ohne Umsetzungsdruck verpuffen Beschlüsse.;

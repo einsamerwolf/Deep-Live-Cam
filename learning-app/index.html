@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BV Köln-Kalk Lernapp</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f4f6fb; color: #1d2433; }
+    header { background: #273c75; color: white; padding: 16px 20px; }
+    main { max-width: 980px; margin: 24px auto; padding: 0 16px; }
+    .card { background: white; border-radius: 12px; padding: 16px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    h1,h2,h3 { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 12px; }
+    button { border: none; background: #2f80ed; color: white; border-radius: 8px; padding: 10px 12px; cursor: pointer; }
+    button:hover { opacity: .95; }
+    .option { display:block; width:100%; text-align:left; margin: 8px 0; background: #eef4ff; color:#1d2433; }
+    .muted { color: #5d667b; }
+    .warn { background: #fff8e1; border-left: 4px solid #f9a825; padding: 10px; border-radius: 8px; }
+    .ok { color: #0a7d28; font-weight: 600; }
+    .bad { color: #b00020; font-weight: 600; }
+    code { background: #eef4ff; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Bezirksvertretung Köln-Kalk – Lernapp</h1>
+  <p>Geschäftsordnung verstehen, praktisch anwenden, mit Force-Ketten trainieren.</p>
+</header>
+<main>
+  <section class="card" id="about"></section>
+  <section class="card" id="analysis"></section>
+  <section class="card" id="examples"></section>
+  <section class="card" id="quiz">
+    <h2>Quiz (mit Force-Ketten)</h2>
+    <p class="muted">Bei falscher Antwort springt die App automatisch auf eine Alternativfrage (z. B. Q001 → Q001a → Q001b).</p>
+    <div id="quiz-box"></div>
+    <p id="quiz-feedback"></p>
+    <button id="next-btn" style="display:none">Nächste Frage</button>
+  </section>
+</main>
+
+<script id="content-data" type="application/json">
+{
+  "app_title": "Bezirksvertretung Köln-Kalk – Lernapp",
+  "learning_goal": "Sicheres, praxisnahes Handeln in Bezirksvertretung, Ausschussarbeit und Bürgerkommunikation.",
+  "analysis": {
+    "title": "Arbeitsanalyse Geschäftsordnung (Lernmodell)",
+    "sections": [
+      {
+        "name": "1) Rollen und Zuständigkeiten",
+        "points": [
+          "Abgrenzung: Bezirksvertretung, Bezirksbürgermeister*in, Bezirksverwaltungsstelle, Rat und Fachausschüsse.",
+          "Praxisregel: Jede Initiative früh auf Zuständigkeit prüfen (Bezirk, Gesamtstadt, Landesrecht).",
+          "Kniff: Vor Antragstellung in der Bezirksverwaltung verifizieren, ob Beschlusskompetenz oder nur Empfehlung vorliegt."
+        ]
+      },
+      {
+        "name": "2) Sitzungsablauf und Fristen",
+        "points": [
+          "Typischer Ablauf: Einladung, Tagesordnung, Fragestunde, Beratung, Beschluss, Niederschrift.",
+          "Fristenmanagement ist erfolgskritisch: Anträge, Änderungsanträge und Dringlichkeitsbegründungen sauber vorbereiten.",
+          "Kniff: Für jedes Thema eine 1-Seiten-Vorlage mit Ziel, Rechtsbezug, Kostenfolge und Beschlussvorschlag bereithalten."
+        ]
+      },
+      {
+        "name": "3) Redeordnung und Verfahrensanträge",
+        "points": [
+          "Verfahrensanträge (z. B. Schluss der Debatte, Verweisung, Vertagung) beeinflussen Ergebnis und Zeitmanagement.",
+          "Praxisregel: Erst Verfahren sichern, dann inhaltlich argumentieren.",
+          "Kniff: Bei emotionalen Themen strukturierte Rede in 3 Schritten nutzen: Problem – Zuständigkeit – konkreter Beschluss."
+        ]
+      },
+      {
+        "name": "4) Öffentlichkeit, Transparenz, Beteiligung",
+        "points": [
+          "Öffentlichkeit ist Regelfall, nichtöffentliche Beratung bleibt begründete Ausnahme.",
+          "Bürgeranliegen bündeln: Einzelfälle in übertragbare Muster übersetzen (z. B. Verkehr, Sicherheit, Sauberkeit).",
+          "Kniff: Nach jeder Sitzung ein kurzes Bürger-Update mit 'Was wurde beschlossen? Was folgt als nächstes?'."
+        ]
+      },
+      {
+        "name": "5) Kontroll- und Umsetzungsarbeit",
+        "points": [
+          "Beschlusskontrolle ist Kernaufgabe: Was wurde wann umgesetzt?",
+          "Praxisregel: Offene Punkte in einem Ampel-Tracking führen (grün/gelb/rot).",
+          "Kniff: Quartalsweise Umsetzungsabfrage als festen Tagesordnungspunkt beantragen."
+        ]
+      }
+    ],
+    "warning": "Vor Nutzung in der echten Mandatsarbeit: aktuelle Geschäftsordnung, Hauptsatzung und Zuständigkeitsordnung der Stadt Köln verbindlich gegenprüfen."
+  },
+  "practice_examples": [
+    {
+      "title": "Sitzungsvorbereitung in 30 Minuten",
+      "steps": [
+        "TOP priorisieren: Wo besteht echte Beschlusskompetenz?",
+        "Pro TOP nur 1 Kernforderung formulieren.",
+        "Gegenargument und Kompromissoption jeweils vorab notieren."
+      ]
+    },
+    {
+      "title": "Bürgeranliegen in beschlussfähigen Antrag überführen",
+      "steps": [
+        "Anliegen clustern (z. B. Verkehr, Ordnung, Jugend, Schule).",
+        "Konkreten Ort, Zeitraum und Zielzustand definieren.",
+        "Prüfauftrag nur nutzen, wenn Faktenlage noch unklar ist; sonst direkte Maßnahme beantragen."
+      ]
+    },
+    {
+      "title": "Fraktionsübergreifende Mehrheiten gewinnen",
+      "steps": [
+        "Interessenmatrix erstellen: Wer braucht welche Zusatzbedingung?",
+        "Formulierung so wählen, dass Kernziel erhalten bleibt und Anschlussfähigkeit steigt.",
+        "Bei Konflikten erst Einigkeit über Monitoring erreichen, dann über Maßnahmenstufe."
+      ]
+    },
+    {
+      "title": "Umgang mit Verwaltungsvorlagen",
+      "steps": [
+        "Vorlage in drei Ebenen lesen: Rechtsrahmen, Finanzen, Umsetzungspfad.",
+        "Fehlende Daten gezielt als Nachforderung formulieren (nicht allgemein 'mehr Infos').",
+        "Änderungsantrag mit klarer Textstelle und Alternativformulierung einreichen."
+      ]
+    },
+    {
+      "title": "Souverän in hitzigen Debatten",
+      "steps": [
+        "Sachstand kurz bestätigen, Emotion entkoppeln, dann Lösungspfad anbieten.",
+        "Bei Provokation auf Verfahrensebene zurückführen (Redezeit, Ordnungsruf, Antrag).",
+        "Abschluss mit messbarem Folgepunkt: Berichtstermin, Vor-Ort-Termin oder Pilotphase."
+      ]
+    }
+  ]
+}
+</script>
+
+<script id="quiz-data" type="text/plain">question_id;question;option_a;option_b;option_c;option_d;correct_option;explanation;alt_question_id
+Q001;Was prüfst du vor einem Antrag zuerst?;Pressetermin;Zuständigkeit;Social-Media-Text;Fraktionslogo;B;Ohne Zuständigkeitsprüfung ist der Antrag oft unzulässig oder wird nur als Empfehlung behandelt.;Q001a
+Q001a;Welche Frage klärt Zuständigkeit am besten?;Ist das Thema wichtig?;Wer ist rechtlich entscheidungsbefugt?;Wer spricht zuerst?;Wie lang ist die Redezeit?;B;Entscheidend ist die rechtliche Entscheidungskompetenz.;Q001b
+Q001b;Wenn die BV nicht zuständig ist, was ist häufig sinnvoll?;Antrag zurückziehen ohne Ersatz;Empfehlungsbeschluss oder Verweisung;Nur Pressemitteilung;Thema vertagen ohne Begründung;B;So bleibt das Thema im Verfahren und gelangt in die richtige Ebene.;
+Q002;Wann ist ein Verfahrensantrag besonders wirksam?;Wenn die Debatte ausufert;Nur am Sitzungsende;Nur in nichtöffentlicher Sitzung;Nie;A;Verfahrensanträge steuern Zeit und Struktur der Beratung.;Q002a
+Q002a;Welcher Verfahrensantrag kann eine Entscheidung vorbereiten?;Vertagung ohne Ziel;Schluss der Debatte mit anschließender Abstimmung;Abbruch der Sitzung;Streichung des TOP ohne Beschluss;B;So wird aus Diskussion wieder ein entscheidungsfähiger Prozess.;Q002b
+Q002b;Was brauchst du bei einer Vertagung mindestens?;Beliebigen Grund;Klare Begründung und weiteres Vorgehen;Nur Zustimmung der Presse;Nichts;B;Vertagung muss transparent und zielorientiert sein.;
+Q003;Wie wird ein Bürgeranliegen beschlussfähig?;Mit allgemeiner Kritik;Mit klarem Ort, Ziel und Maßnahme;Mit möglichst langen Reden;Mit anonymen Hinweisen;B;Beschlussfähigkeit entsteht durch Konkretisierung.;
+Q004;Was ist ein guter Aufbau für eine 90-Sekunden-Rede?;Biografie, Zitat, Witz;Problem, Zuständigkeit, Beschlussvorschlag;Fraktionsgeschichte, Dank, Ende;Frage, Frage, Frage;B;Diese Struktur ist klar, knapp und entscheidungsorientiert.;
+Q005;Welche Methode hilft bei der Beschlusskontrolle?;Ampel-Tracking;Spontane Erinnerung;Nur mündliche Nachfragen;Warten auf Presseberichte;A;Transparente Nachverfolgung erhöht Umsetzungsdruck.;
+Q006;Wann sollte ein Prüfauftrag statt Sofortmaßnahme beantragt werden?;Wenn Faktenlage unklar ist;Immer;Nie;Nur vor Wahlen;A;Prüfaufträge sind sinnvoll zur belastbaren Entscheidungsgrundlage.;
+Q007;Was stärkt fraktionsübergreifende Mehrheiten?;Maximalforderungen ohne Dialog;Interessenmatrix und Kompromissformulierung;Nur interne Abstimmung;Vertagung aller Themen;B;Strategische Anschlussfähigkeit erhöht Mehrheitschancen.;
+Q008;Welcher Fehler kostet oft politische Wirkung?;Zu konkrete Ziele;Keine Nachverfolgung nach Beschluss;Kurze Reden;Saubere Anträge;B;Ohne Umsetzungsdruck verpuffen Beschlüsse.;</script>
+
+<script>
+let quizRows = [];
+let quizMap = new Map();
+let normalOrder = [];
+let currentIndex = 0;
+let forcedQuestionId = null;
+let currentQuestion = null;
+
+function parseCsv(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(';');
+  return lines.slice(1).map(line => {
+    const parts = line.split(';');
+    const row = {};
+    headers.forEach((h, i) => row[h] = (parts[i] || '').trim());
+    return row;
+  });
+}
+
+function renderQuestion() {
+  const box = document.getElementById('quiz-box');
+  const feedback = document.getElementById('quiz-feedback');
+  const nextBtn = document.getElementById('next-btn');
+  feedback.textContent = '';
+  nextBtn.style.display = 'none';
+
+  if (forcedQuestionId) {
+    currentQuestion = quizMap.get(forcedQuestionId);
+  } else {
+    const id = normalOrder[currentIndex];
+    currentQuestion = quizMap.get(id);
+  }
+
+  if (!currentQuestion) {
+    box.innerHTML = '<p><strong>Fertig!</strong> Du hast alle Fragen bearbeitet.</p>';
+    return;
+  }
+
+  box.innerHTML = `
+    <h3>${currentQuestion.question_id}: ${currentQuestion.question}</h3>
+    <button class="option" data-opt="A">A) ${currentQuestion.option_a}</button>
+    <button class="option" data-opt="B">B) ${currentQuestion.option_b}</button>
+    <button class="option" data-opt="C">C) ${currentQuestion.option_c}</button>
+    <button class="option" data-opt="D">D) ${currentQuestion.option_d}</button>
+  `;
+
+  box.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => answer(btn.dataset.opt));
+  });
+}
+
+function answer(selected) {
+  const feedback = document.getElementById('quiz-feedback');
+  const nextBtn = document.getElementById('next-btn');
+
+  if (selected === currentQuestion.correct_option) {
+    feedback.innerHTML = `<span class="ok">Richtig.</span> ${currentQuestion.explanation}`;
+    forcedQuestionId = null;
+    currentIndex += 1;
+  } else {
+    feedback.innerHTML = `<span class="bad">Nicht korrekt.</span> ${currentQuestion.explanation}`;
+    forcedQuestionId = currentQuestion.alt_question_id || null;
+    if (!forcedQuestionId) {
+      currentIndex += 1;
+    }
+  }
+
+  nextBtn.style.display = 'inline-block';
+}
+
+document.getElementById('next-btn').addEventListener('click', renderQuestion);
+
+function init() {
+  const content = JSON.parse(document.getElementById('content-data').textContent);
+  const quizText = document.getElementById('quiz-data').textContent;
+
+  quizRows = parseCsv(quizText);
+  quizRows.forEach(r => quizMap.set(r.question_id, r));
+  normalOrder = quizRows.filter(r => !/[a-z]$/.test(r.question_id)).map(r => r.question_id);
+
+  document.getElementById('about').innerHTML = `
+    <h2>${content.app_title}</h2>
+    <p>${content.learning_goal}</p>
+    <p><strong>Einfach starten:</strong> Öffne nur die Datei <code>learning-app/index.html</code> per Doppelklick im Browser.</p>
+    <p class="warn">${content.analysis.warning}</p>
+  `;
+
+  document.getElementById('analysis').innerHTML = `
+    <h2>${content.analysis.title}</h2>
+    ${content.analysis.sections.map(sec => `
+      <h3>${sec.name}</h3>
+      <ul>${sec.points.map(p => `<li>${p}</li>`).join('')}</ul>
+    `).join('')}
+  `;
+
+  document.getElementById('examples').innerHTML = `
+    <h2>Praxisnahe Lernbeispiele</h2>
+    <div class="grid">
+      ${content.practice_examples.map(ex => `
+        <article class="card" style="margin:0">
+          <h3>${ex.title}</h3>
+          <ol>${ex.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+        </article>
+      `).join('')}
+    </div>
+  `;
+
+  renderQuestion();
+}
+
+init();
+</script>
+</body>
+</html>
