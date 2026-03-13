@@ -1,0 +1,92 @@
+{
+  "app_title": "Bezirksvertretung Köln-Kalk – Lernapp",
+  "learning_goal": "Sicheres, praxisnahes Handeln in Bezirksvertretung, Ausschussarbeit und Bürgerkommunikation.",
+  "analysis": {
+    "title": "Arbeitsanalyse Geschäftsordnung (Lernmodell)",
+    "sections": [
+      {
+        "name": "1) Rollen und Zuständigkeiten",
+        "points": [
+          "Abgrenzung: Bezirksvertretung, Bezirksbürgermeister*in, Bezirksverwaltungsstelle, Rat und Fachausschüsse.",
+          "Praxisregel: Jede Initiative früh auf Zuständigkeit prüfen (Bezirk, Gesamtstadt, Landesrecht).",
+          "Kniff: Vor Antragstellung in der Bezirksverwaltung verifizieren, ob Beschlusskompetenz oder nur Empfehlung vorliegt."
+        ]
+      },
+      {
+        "name": "2) Sitzungsablauf und Fristen",
+        "points": [
+          "Typischer Ablauf: Einladung, Tagesordnung, Fragestunde, Beratung, Beschluss, Niederschrift.",
+          "Fristenmanagement ist erfolgskritisch: Anträge, Änderungsanträge und Dringlichkeitsbegründungen sauber vorbereiten.",
+          "Kniff: Für jedes Thema eine 1-Seiten-Vorlage mit Ziel, Rechtsbezug, Kostenfolge und Beschlussvorschlag bereithalten."
+        ]
+      },
+      {
+        "name": "3) Redeordnung und Verfahrensanträge",
+        "points": [
+          "Verfahrensanträge (z. B. Schluss der Debatte, Verweisung, Vertagung) beeinflussen Ergebnis und Zeitmanagement.",
+          "Praxisregel: Erst Verfahren sichern, dann inhaltlich argumentieren.",
+          "Kniff: Bei emotionalen Themen strukturierte Rede in 3 Schritten nutzen: Problem – Zuständigkeit – konkreter Beschluss."
+        ]
+      },
+      {
+        "name": "4) Öffentlichkeit, Transparenz, Beteiligung",
+        "points": [
+          "Öffentlichkeit ist Regelfall, nichtöffentliche Beratung bleibt begründete Ausnahme.",
+          "Bürgeranliegen bündeln: Einzelfälle in übertragbare Muster übersetzen (z. B. Verkehr, Sicherheit, Sauberkeit).",
+          "Kniff: Nach jeder Sitzung ein kurzes Bürger-Update mit 'Was wurde beschlossen? Was folgt als nächstes?'."
+        ]
+      },
+      {
+        "name": "5) Kontroll- und Umsetzungsarbeit",
+        "points": [
+          "Beschlusskontrolle ist Kernaufgabe: Was wurde wann umgesetzt?",
+          "Praxisregel: Offene Punkte in einem Ampel-Tracking führen (grün/gelb/rot).",
+          "Kniff: Quartalsweise Umsetzungsabfrage als festen Tagesordnungspunkt beantragen."
+        ]
+      }
+    ],
+    "warning": "Vor Nutzung in der echten Mandatsarbeit: aktuelle Geschäftsordnung, Hauptsatzung und Zuständigkeitsordnung der Stadt Köln verbindlich gegenprüfen."
+  },
+  "practice_examples": [
+    {
+      "title": "Sitzungsvorbereitung in 30 Minuten",
+      "steps": [
+        "TOP priorisieren: Wo besteht echte Beschlusskompetenz?",
+        "Pro TOP nur 1 Kernforderung formulieren.",
+        "Gegenargument und Kompromissoption jeweils vorab notieren."
+      ]
+    },
+    {
+      "title": "Bürgeranliegen in beschlussfähigen Antrag überführen",
+      "steps": [
+        "Anliegen clustern (z. B. Verkehr, Ordnung, Jugend, Schule).",
+        "Konkreten Ort, Zeitraum und Zielzustand definieren.",
+        "Prüfauftrag nur nutzen, wenn Faktenlage noch unklar ist; sonst direkte Maßnahme beantragen."
+      ]
+    },
+    {
+      "title": "Fraktionsübergreifende Mehrheiten gewinnen",
+      "steps": [
+        "Interessenmatrix erstellen: Wer braucht welche Zusatzbedingung?",
+        "Formulierung so wählen, dass Kernziel erhalten bleibt und Anschlussfähigkeit steigt.",
+        "Bei Konflikten erst Einigkeit über Monitoring erreichen, dann über Maßnahmenstufe."
+      ]
+    },
+    {
+      "title": "Umgang mit Verwaltungsvorlagen",
+      "steps": [
+        "Vorlage in drei Ebenen lesen: Rechtsrahmen, Finanzen, Umsetzungspfad.",
+        "Fehlende Daten gezielt als Nachforderung formulieren (nicht allgemein 'mehr Infos').",
+        "Änderungsantrag mit klarer Textstelle und Alternativformulierung einreichen."
+      ]
+    },
+    {
+      "title": "Souverän in hitzigen Debatten",
+      "steps": [
+        "Sachstand kurz bestätigen, Emotion entkoppeln, dann Lösungspfad anbieten.",
+        "Bei Provokation auf Verfahrensebene zurückführen (Redezeit, Ordnungsruf, Antrag).",
+        "Abschluss mit messbarem Folgepunkt: Berichtstermin, Vor-Ort-Termin oder Pilotphase."
+      ]
+    }
+  ]
+}
