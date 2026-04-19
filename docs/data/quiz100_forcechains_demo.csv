@@ -1,0 +1,7 @@
+question_id,prompt,option_a,option_b,option_c,correct_option,alt_question_id
+Q001,Was ist das Hauptziel einer kommunalen Anfrage?,Verbindlicher Beschluss,Informationsgewinn für Kontrolle,Personalentscheidungen,B,Q001a
+Q001a,Alternative zu Q001: Wozu dient eine Anfrage primär?,Fördermittel beantragen,Verwaltung zur Auskunft verpflichten,Haushalt sperren,B,Q001b
+Q001b,Zweite Variation Q001: Welche Funktion passt am besten?,Entscheidung erzwingen,Informations- und Kontrollrecht nutzen,Bürgermeisterwahl vorbereiten,B,
+Q002,Was gehört in einen Antrag zwingend hinein?,Nur Kritik ohne Vorschlag,Konkreter Beschlussvorschlag,Ein Pressezitat,B,Q002a
+Q002a,Alternative zu Q002: Welcher Kernbaustein darf nie fehlen?,Beschlussformel,"Irgendwas zum Thema",Sitzungsfoto,A,Q002b
+Q002b,Zweite Variation Q002: Antrag ohne was ist formal schwach?,Beschlussinhalt,Anrede,Datumsangabe,A,

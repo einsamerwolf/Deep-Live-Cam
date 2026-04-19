@@ -135,3 +135,30 @@ Entscheide zuerst nur diese drei Punkte:
 
 Wenn du diese drei Entscheidungen triffst, ist das Projekt umsetzbar.
 Wenn nicht, bleibt es wahrscheinlich eine Dauerbaustelle.
+
+## 11) Soforttest lokal (5 Minuten)
+
+### A) Demo ausführen
+
+```bash
+python3 tools/quiz_forcechain_demo.py --answers B,B,B,B,B,A
+```
+
+Was du sehen solltest:
+- Bei `Q001` falsch -> Sprung zu `Q001a`
+- Wieder falsch -> Sprung zu `Q001b`
+- Danach normal weiter zu `Q002`
+
+### B) Mit eigener CSV testen
+
+```bash
+python3 tools/quiz_forcechain_demo.py --csv /pfad/zu/deiner/quiz100_forcechains.csv
+```
+
+### C) Direkt in eine Alternative springen (wie `force_id`)
+
+```bash
+python3 tools/quiz_forcechain_demo.py --start-id Q001a --answers B,B
+```
+
+Damit kannst du die Force-Kette exakt so testen, wie sie später in Opal/Apps Script laufen soll.
